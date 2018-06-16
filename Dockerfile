@@ -1,4 +1,4 @@
-FROM rust:1.26.2-stretch
+FROM rust:1.26.2-slim-stretch
 
 ENV APP_HOME /opt/whitebox
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y --no-install-recommends install \
