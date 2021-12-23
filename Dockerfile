@@ -19,7 +19,7 @@ ARG APP_HOME
 COPY --from=builder ${APP_HOME}/whitebox/target/release/whitebox_tools /usr/local/bin
 COPY --from=builder ${APP_HOME}/whitebox/whitebox_tools.py ${APP_HOME}/whitebox/whitebox_tools.py
 RUN useradd -ms /bin/bash -r -d ${APP_HOME} gis
-ENV PYTHONPATH "$PYTHONPATH:${APP_HOME}"
+ENV PYTHONPATH "$PYTHONPATH:${APP_HOME}/whitebox"
 USER gis
 WORKDIR ${APP_HOME}
 CMD ["whitebox_tools"]
